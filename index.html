@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tangem Test</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="topBanner">
+            <div class="image">
+            </div>
+            <div class="mainContent">
+                <div class="eventAndDate">
+                    <span class="event">Black Friday</span><span class="comma">,&nbsp;</span><span class="date">, 24-27 Nov</span>
+                </div>
+                <div class="divider"></div>
+                <div class="discount">
+                    10%OFF
+                </div>
+                <div class="divider"></div>
+                <div class="coupon">
+                    Use code <span class="couponName">10FRIDAY</span><span class="atCheckout"> at checkout</span>
+                </div>
+            </div>
+            <div class="rightContent">
+                <a class="button" href="/">
+                    <span class="buttonText">
+                        Shop now
+                    </span>
+                </a>
+                <div class="close">
+                </div>
+            </div>
+        </div>
+        <div class="rightBottomBanner" id="rightBottomBanner">
+            <div class="close" id="rightBottomBanner_close"></div>
+            <div class="content">
+                <div class="event">
+                    Black Friday
+                </div>
+                <div class="discount">
+                    10%OFF
+                </div>
+                <div class="coupon">
+                    Use code <span class="couponName">10FRIDAY</span> at checkout
+                </div>
+                <div class="button">
+                    Shop now through Monday
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function onDocumentReady() {
+            const cookies = document.cookie.split(';');
+
+            for (const cookie of cookies) {
+                const [cookieName, cookieValue] = cookie.trim().split('=');
+
+                if (cookieName === 'isRightBottomBannerClosed' && !!cookieValue) {
+                    document.getElementById('rightBottomBanner').classList.add('isClosed');
+
+                    break;
+                }
+            }
+        }
+
+        if (document.readyState === 'loading')
+            document.addEventListener('DOMContentLoaded', onDocumentReady);
+
+        if (document.readyState !== 'loading')
+            onDocumentReady();
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY <= 108)
+                return
+
+            document.getElementById('rightBottomBanner').classList.add('isVisible');
+        });
+
+        document.getElementById('rightBottomBanner_close').addEventListener('click', function () {
+            document.cookie = "isRightBottomBannerClosed=1; path=/";
+
+            document.getElementById('rightBottomBanner').classList.add('isClosed');
+        });
+    </script>
+</body>
+
+</html>

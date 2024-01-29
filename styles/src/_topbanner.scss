@@ -1,0 +1,240 @@
+.topBanner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 54px;
+    width: 100%;
+    background-color: #101010;
+    overflow: hidden;
+
+    &::before {
+        display: block;
+        content: "";
+        border-radius: 100%;
+        background: linear-gradient(180deg, #101010 0%, #0B0B0B 100%);
+        position: absolute;
+        width: 80%;
+        padding-bottom: 80%;
+        margin-top: -53%;
+        left: -13%;
+
+        @media (max-width: 1000px) {
+            display: none;
+        }
+    }
+
+    &::after {
+        display: block;
+        content: "";
+        border-radius: 100%;
+        background: radial-gradient(50% 50% at 50% 50%, #FAE571 0%, rgba(11, 14, 23, 0.00) 100%);
+        filter: blur(92px);
+        position: absolute;
+        width: 80%;
+        padding-bottom: 80%;
+        margin-top: -71%;
+        right: -17%;
+
+        @media (max-width: 1000px) {
+            display: none;
+        }
+    }
+
+    .image {
+        height: 54px;
+        width: 220px;
+        position: relative;
+        z-index: 1;
+        background-image: url("/images/topBanner_present.png");
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @media (max-width: 1000px) {
+            width: 185px;
+        }
+
+        @media (max-width: 750px) {
+            width: 159px;
+        }
+
+        @media (max-width: 550px) {
+            width: 128px;
+        }
+    }
+
+    .mainContent {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 54px;
+
+        .eventAndDate {
+            color: #FFF;
+            font-family: "Graphik LC Web Regular";
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0.048px;
+            transform: translateY(1px);
+
+            .event {
+                font-family: "Graphik LC Web Bold";
+                font-weight: 600;
+            }
+
+            .comma {
+                display: none;
+                font-family: "Graphik LC Web Bold";
+                font-weight: 600;
+
+                @media (max-width: 750px) {
+                    display: inline;
+                }
+            }
+
+            .date {
+                @media (max-width: 1000px) {
+                    display: none;
+                }
+            }
+        }
+
+        .discount {
+            color: #D7A830;
+            font-family: "Graphik LC Web Bold";
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: -0.64px;
+            transform: translateY(1px);
+        }
+
+        .coupon {
+            color: #FFF;
+            font-family: "Graphik LC Web Regular";
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0.048px;
+            transform: translateY(1px);
+
+            .couponName {
+                font-family: "Graphik LC Web Bold";
+                color: #D7A830;
+                font-weight: 600;
+            }
+
+            .atCheckout {
+                @media (max-width: 1000px) {
+                    display: none;
+                }
+            }
+
+            @media (max-width: 750px) {
+                display: none;
+            }
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 27px;
+            height: 54px;
+
+            &::before {
+                display: block;
+                content: "";
+                height: 3px;
+                width: 3px;
+                background-color: rgba(#FFFFFF, 0.15);
+            }
+
+            @media (max-width: 750px) {
+                display: none;
+            }
+        }
+    }
+
+    .rightContent {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 38px;
+            padding-left: 19.5px;
+            padding-right: 19.5px;
+            border-radius: 19px;
+            background-color: #fff;
+            text-decoration: none;
+
+            @media (max-width: 500px) {
+                height: 30px;
+                width: 30px;
+                padding-left: 0px;
+                padding-right: 0px;
+                border-radius: 0px;
+                background-color: transparent;
+                background-image: url("/images/showMoreIcon.svg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 9px 16.5px;
+            }
+
+            .buttonText {
+                display: inline-block;
+                text-shadow: 0px 0px 30px rgba(102, 204, 255, 0.20);
+                backdrop-filter: blur(15px);
+                font-family: "Graphik LC Web Medium";
+                font-size: 16px;
+                line-height: 22px;
+                font-weight: 500;
+                background-image: linear-gradient(to right, #707070, #0B0B0B);
+                transform: translateY(1px);
+                color: transparent;
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+                @media (max-width: 500px) {
+                    display: none;
+                }
+            }
+
+            @media (max-width: 1000px) {
+                margin-right: 24px;
+            }
+
+            @media (max-width: 450px) {
+                margin-right: 16px;
+            }
+
+            @media (max-width: 400px) {
+                margin-right: 8px;
+            }
+        }
+
+        .close {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            margin-left: 14px;
+            margin-right: 22px;
+            background-image: url("/images/closeButton.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            @media (max-width: 1000px) {
+                display: none;
+            }
+        }
+    }
+}
