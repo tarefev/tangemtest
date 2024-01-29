@@ -33,6 +33,10 @@
         background-position: right center;
     }
 
+    @media (max-width: 500px) {
+        background-position: right 30% center;
+    }
+
     .close {
         position: absolute;
         width: 24px;
@@ -49,7 +53,6 @@
     .content {
         margin-left: 284px;
         width: 316px;
-        height: 349px;
 
         @media (max-width: 640px) {
             margin-left: auto;
